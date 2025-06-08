@@ -8,16 +8,16 @@ class MysteryBox {
       this.size = 25;
     }
 
-    update(orb, mysteryBoxShow) {
+    update(orb) {
       if (orb.x >= this.x && orb.x <= this.x + this.size && orb.y >= this.y && orb.y <= this.y + this.size) {
         this.x = random(50, width - 100);
         this.y = random(50, height - 100);
-        mysteryBoxShow = false;
-        mysteryBoxCounter.reset();
         state = 'PAUSED';
       }
       return;
     }
+
+
 
     show(mysteryBoxShow) {
       if (mysteryBoxShow) {

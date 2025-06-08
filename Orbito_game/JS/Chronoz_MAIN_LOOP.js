@@ -73,7 +73,9 @@ function draw() {
       textSize(32);
       strokeWeight(2);
       fill(200);
-      text('PAUSED', width/2 - 115/2 - 10, height/3 + 32 + 5);
+      text('Power Up', width/2 - 115/2 - 10, height/3 + 32 + 5);
+      mysteryBoxShow = false;
+      mysteryBoxCounter.reset();
       break;
       
 
