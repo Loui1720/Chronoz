@@ -9,7 +9,7 @@ function setup() {
   currentHighscore = new Score(10, 100 + 125, 125, 25);
   target = new Target(25);
   mysteryBox = new MysteryBox();
-  mysteryBoxCounter = new Counter(1000, 1000, random(5, 10), 0, 0);
+  mysteryBoxCounter = new Counter(0, 0, random(5, 10), 0, 0);
   counter = new Counter(width/2 - 750/3.65, height/2 + 750/3, 5, 750, 5);
   startButton = new Button(width/2 - 115/2, height/3, 115, 55, 15, 5, 'START');
   settingsButton = new Button(width/1.25 - 115/2, 25, 170, 55, 15, 5, 'SETTINGS');
@@ -61,6 +61,7 @@ function draw() {
     case 'PLAYING': // Playing
       counter.update();
       mysteryBox.show(mysteryBoxShow);
+      mysteryBox.update(orb, mysteryBoxShow);
       mysteryBoxCounter.update();
       target.show();
       target.update(orb, score);
@@ -75,7 +76,6 @@ function draw() {
       text('PAUSED', width/2 - 115/2 - 10, height/3 + 32 + 5);
       break;
       
-
 
     case 'FINISHED': // Try again menu
       currentHighscore.show();
