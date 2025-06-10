@@ -10,9 +10,11 @@ class MysteryBox {
 
     update(orb) {
       if (orb.x >= this.x && orb.x <= this.x + this.size && orb.y >= this.y && orb.y <= this.y + this.size) {
-        this.x = random(50, width - 100);
-        this.y = random(50, height - 100);
-        state = 'PAUSED';
+        if (mysteryBoxShow) {
+          this.x = random(50, width - 100);
+          this.y = random(50, height - 100);
+          state = 'PAUSED';
+        }
       }
       return;
     }
