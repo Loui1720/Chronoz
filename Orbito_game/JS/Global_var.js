@@ -18,6 +18,7 @@ let mysteryBoxTimer;
 let startButton;
 let settingsButton;
 let exitSettingsButton;
+let settingsPlayerSkin;
 let settings;
 let tryAgainButton;
 let counter;

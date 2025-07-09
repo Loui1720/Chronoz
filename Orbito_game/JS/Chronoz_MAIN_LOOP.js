@@ -14,6 +14,7 @@ function setup() {
   startButton = new Button(width/2 - 115/2, height/3, 115, 55, 15, 5, 'START');
   settingsButton = new Button(width/1.25 - 115/2, 25, 170, 55, 15, 5, 'SETTINGS');
   exitSettingsButton = new Button(width/1.25 - 115/2, 25, 85, 55, 15, 5, 'EXIT');
+  settingsPlayerSkin = new Button(width/1.25 - 115/2, 25 + 55 + 25, 85, 55, 15, 5, 'SKIN');
   settings = new Settings(width/1.5, 0, width, height, color(200));
   tryAgainButton = new Button(width/2 - 145/2, height/3, 145, 55, 15, 5, 'Try Again');
 
@@ -46,10 +47,13 @@ function draw() {
       currentHighscore.show();
       startButton.show();
       orb.reset();
+      mysteryBoxCounter.reset();
+      mysteryBoxShow = false;
 
       if (settingsState == true) {
         settings.show();
         exitSettingsButton.show();
+        settingsPlayerSkin.show();
       }
 
       if (settingsState == false) {

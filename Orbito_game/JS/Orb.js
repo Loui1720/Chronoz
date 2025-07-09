@@ -54,8 +54,32 @@ class Orb {
   
 
   show() {
-    fill(0);
-    stroke(0);
+    switch (jsonData.skin) {
+      case 0:
+        fill(0);
+        stroke(0);
+        break;
+      case 1:
+        fill(255);
+        stroke(255);
+        break;
+      case 2:
+        fill(255, 0, 0);
+        stroke(255, 0, 0);
+        break;
+      case 3:
+        fill(0, 255, 0);
+        stroke(0, 255, 0);
+        break;
+      case 4:
+        fill(0, 0, 255);
+        stroke(0, 0, 255);
+        break;
+      default:
+        fill(0);
+        stroke(0);
+        break;
+    }
     ellipse(this.pos.x, this.pos.y, this.size, this.size);
   }
 }

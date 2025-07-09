@@ -21,6 +21,16 @@ function mouseReleased() {
     return;
   }
 
+  if (settingsState && settingsPlayerSkin.hover()) {
+    if (jsonData.skin >= 4) {
+      jsonData.skin = 0;
+    }
+    else {
+      jsonData.skin++;
+    }
+    return;
+  }
+
   if (state == 'FINISHED' && tryAgainButton.hover()) {
     state = 'START_MENU';
     return;
@@ -30,10 +40,10 @@ function mouseReleased() {
 
 
 function keyReleased() {
-  if (keyCode === 32 && state == 'PLAYING') { // 32 = Spacebare
-    state = 'PAUSED';
-    return;
-  }
+  // if (keyCode === 32 && state == 'PLAYING') { // 32 = Spacebare
+  //   state = 'PAUSED';
+  //   return;
+  // }
   if (keyCode === 32 && state == 'PAUSED') {
     state = 'PLAYING';
     return;
@@ -44,7 +54,7 @@ function keyReleased() {
 
 function mysteryBoxSpawn() {
   if (mysteryBoxCounter.count < 0 && !mysteryBoxShow && state == 'PLAYING') {
-    mysteryBoxShow = true;
+    // mysteryBoxShow = true; // Makes the Mystery Box appear
     return;
   }
   else if (mysteryBoxCounter.count >= 0 && !mysteryBoxShow && state == 'PLAYING') {
