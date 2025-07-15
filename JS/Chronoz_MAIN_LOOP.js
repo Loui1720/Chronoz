@@ -1,6 +1,16 @@
 
 function setup() {
-  createCanvas(700, 700);
+  
+  if (document.body.clientWidth < 700 && document.body.clientHeight > 700) {
+    createCanvas(document.body.clientWidth, document.body.clientWidth);
+  } else if (document.body.clientWidth > 700 && document.body.clientHeight < 700) {
+    createCanvas(document.body.clientHeight, document.body.clientHeight);
+  } else if (document.body.clientWidth < 700 && document.body.clientHeight < 700) {
+    createCanvas(document.body.clientWidth, document.body.clientHeight);
+  } else {
+    createCanvas(700, 700);
+  }
+
   background(200);
   
   // CLASSES
