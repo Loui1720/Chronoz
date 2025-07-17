@@ -4,7 +4,7 @@ function preload() {
 
 
 
-function mouseReleased() {
+function mouseClicked() {
   if (state == 'START_MENU') {
     if (settingsButton.hover() && settingsState == false) {
       settingsState = true;
